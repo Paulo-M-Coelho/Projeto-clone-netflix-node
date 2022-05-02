@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(39, 39, 39);
+    font-family: 'Roboto', sans-serif;
+}
+
+main{
+   width: 100%;
+
+}
+
+main section{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    
+}
+main section h1{
+    color: white;
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+main section form{}
+main section form label{
+    color: white;
+    font-size: 20px;
+}
+main section form input{
+    width: 100%;
+    height: 25px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    padding: 0 15px;
+    border: none;
+}
+main section form input:focus{
+    border:0 none;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+}
+main section form button{
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(211, 12, 12);
+    border:none;
+    border-radius: 3px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+.section-2{
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.img{
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    
+}

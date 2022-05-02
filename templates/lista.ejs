@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/lista.css" >
+    <title>Lista dos filmes</title>
+</head>
+<body>
+    
+
+    <% for(let i=0; i<filmes.length; i++) {%>
+        <div class="card" id="<%=filmes[i]._id%>">
+            <form method="POST" action="/<%=filmes[i]._id%>?_method=DELETE">
+                <div>
+                    <h2><%=filmes[i].name%></h2>
+                    <h3><%=filmes[i].category%></h3>
+                    <div class="desc">
+                        <h3>Descrição</h3>
+                        <%=filmes[i].description%>
+                    </div>
+                    <div class="urlImg">
+                        <h3>URL da imagem</h3>
+                        <%=filmes[i].urlImage%>
+                    </div>
+                    <div class="urlVideo">
+                        <h3>URL do video</h3>
+                        <%=filmes[i].urlVideo%>
+                    </div>
+                </div>
+                <div>
+                    <input name="id" value="<%=filmes[i]._id%>" hidden>
+                    <a href="/edit/<%=filmes[i]._id%>">Edit</a>
+                    <button type="submit">Delete</button>
+                </div>
+            </form>
+        </div>
+        <%}%>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/search.css" >
+    <link rel="icon" href="/assets/images/pngwing.com.png" type="image/png">
+    <title>Resultado de pesquisa</title>
+</head>
+<body>
+    <header>
+        <a href="/" class="app-logo"><img class="app-logo" src="/assets/images/pngwing.com.png" alt="logo"></a>
+        <div class="search">
+            <form action="/search">
+                <input type="text" name="search" placeholder="Buscar">
+                <button><img src="/assets/images/search-branco.png"></button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Resultado de pesquisa</h1>
+        </div>
+        <div class="container">
+            <% if(filmes.length > 0) {%>
+                <%for(let filme of filmes) {%>
+                    <div class="filme-card">
+                        <img src="<%= filme.urlImage%>">
+                        <h3><a href="/filme/<%= filme.id%>"><%= filme.name%></a></h3>
+                    </div>
+                    <%}}%>
+        </div>
+    </main>
+</body>
+</html>

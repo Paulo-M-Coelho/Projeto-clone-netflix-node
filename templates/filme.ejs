@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/filme.css" />
+    
+    <link rel="icon" href="/assets/images/pngwing.com.png" type="image/png">
+    <title>Netflix - <%= filme.name%></title>
+</head>
+
+<body>
+
+    <div class="informacoes ">
+        <div class="informacoes-sec" >
+            <div class="play-1" onclick="displayPlay()">
+                <img class="buton btnPlay"  src="/assets/images/play-branco.png" />
+            </div>
+            <div class="desc">
+                <h3>Sinopse</h3>
+                <p><%= filme.description%></p>
+            </div>
+        </div>
+        
+        <img src="<%=filme.urlImage%>">
+    </div>
+    
+    <div class="player display">
+        <video class="video" autobuffer src="<%= filme.urlVideo%>"></video>
+
+        
+        <div class="teste">
+            <div class="timer">
+                <div class="player-control-progress">
+                    <progress value="0" max="1"></progress>
+                </div>
+                <div class="tempo">
+                    <p class="inicio">0:00</p>
+                    <p class="fim">0:00</p>
+                </div>
+            </div>
+            <div class="controle">
+                <img class="buton btnPause " onclick="pausar()" src="/assets/images/pause-preto.png" />
+                
+                <img  class="buton btnPlay btnPlay-2 " onclick="start()" src="/assets/images/play-branco.png" />
+                
+                
+                
+                
+                <img class="buton" onclick="menos10segundos()" src="/assets/images/-10sMaior.png" />
+                <img class="buton" onclick="mais10segundos()" src="/assets/images/+10sMaior.png" />
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="/scripts/filme.js"></script>
+    
+</body>
+
+</html>
