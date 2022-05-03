@@ -15,14 +15,19 @@
 <body>
 
     <div class="informacoes ">
+        
         <div class="informacoes-sec" >
-            <div class="play-1" onclick="displayPlay()">
-                <img class="buton btnPlay"  src="/assets/images/play-branco.png" />
-            </div>
+            <img class="logoNetflix" src="/assets/images/netflix-logo.svg">
+            <h1><%=filme.name%></h1>
             <div class="desc">
                 <h3>Sinopse</h3>
                 <p><%= filme.description%></p>
             </div>
+            <div class="play-1" onclick="displayPlay()">
+                <img src="/assets/images/play-branco.png" />
+                <h2>Assistir</h2>
+            </div>
+            
         </div>
         
         <img src="<%=filme.urlImage%>">
