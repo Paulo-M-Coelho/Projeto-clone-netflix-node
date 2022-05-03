@@ -1,5 +1,7 @@
 //instalar o method-override para poder apagar um dado atravez de um formulario (npm install method-override)
 //instalar o nodemon para o server recarregar sempre q algum arquivo for midificado
+//instalar o joi para validar se a senha q o usuario esta tentando cadastrar tem realmente mais de 6 caracteres( npm install @hapi/joi );
+//instalar o bcrypt para criptografar as senhas dos usuarios e quando for fazer o login descriptografar.
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -16,8 +18,6 @@ app.use(express.urlencoded({extended: true}));
 
 connectDb();
 
-
-
 const userRoute = require('./routes/userRouter');
 const userDbConnect = require('./database/userDb');
 const cookieParser = require('cookie-parser')
@@ -29,11 +29,6 @@ express.urlencoded({extended:true}), videosRoute);
 app.use('/user',express.urlencoded({extended:true}),userRoute);
 
 userDbConnect();
-
-
-
-
-
 
 
 

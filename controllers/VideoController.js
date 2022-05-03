@@ -12,20 +12,16 @@ const allVideos = async (req,res)=>{
 // lista todos os filmes em uma tela como string
 const lista = async (req,res)=>{
     if(req.user.admin){
-    try{
-        
+        try{
             let docs = await Video.find({});
-        res.render('lista', {filmes:docs})
-        
-        
-    }catch (error){
-        res,send(error)
-    }
+            res.render('lista', {filmes:docs})      
+        }catch (error){
+            res,send(error)
+        }
+    }else{
+        res.status(400).send('não é admin');
 }
-else{
-    res.status(400).send('não é admin');
-}
-}
+};
 
 //carega os dados do arquivo para possivel edição
 const loadVideo = async (req,res)=>{
@@ -34,17 +30,16 @@ const loadVideo = async (req,res)=>{
     try{
         if(req.user.admin){
             let dadosVideo = await Video.findById(id)
-
-        res.render('edit',{error:false, body: dadosVideo})
+            res.render('edit',{error:false, body: dadosVideo})
         }
         else{
             res.status(400).send('não é admin');
-        }
-        
+        }   
     }catch(error){
         res.status(404).send(error)
     }
-}
+};
+
 // metodo para atualizar o arquivo do filme
 const editVideo = async (req,res)=>{
     let video = {};
@@ -71,8 +66,7 @@ const editVideo = async (req,res)=>{
 }
 // Metodo que busca o filme pelo id e direciona para a tela individual
 const listOne = async (req,res)=>{
-    
-    
+     
         let id = req.params.id
     if(!id){
         id = req.body.id
@@ -81,25 +75,18 @@ const listOne = async (req,res)=>{
     
     res.render('filme',{
         filme: filme,
-       // urlVideo: filme.urlVideo,
-        //name: `${filme.name}`
     })
-    
-   
-    
 }
 
 // metodo da rota admin
 const addVideo = (req,res)=>{
-    
-    
+    //confere se a requisição esta retornando uq o usuario é ou não o admin
     if(req.user.admin){
         res.render('admin')
     }
     else{
         res.status(400).send('não é admin');
-    }
-    
+    } 
 };
 
 // metodo que cria e salva o arquivo(filme)
@@ -114,6 +101,7 @@ const createVideo = async (req,res)=>{
     }
 }
 
+//Busca arquivos correspondentes ao campo de pesquisa(incluindo letras separadas que não são uma palavra)
 const search = async (req,res)=>{
 
     const valor = `${req.query.search}`;
@@ -127,6 +115,7 @@ console.log(filmes)
     })
 }
 
+//Deleta o arquivo do filme correspondente
 const deleteFilme = async (req,res)=>{
     let id = req.params.id;
     if(req.user.admin){
@@ -144,4 +133,4 @@ const deleteFilme = async (req,res)=>{
     }
 }
 
-module.exports = {allVideos,lista, addVideo, createVideo, listOne, loadVideo,editVideo, search, deleteFilme}
+module.exports = {allVideos,lista,loadVideo,editVideo,listOne,addVideo,createVideo,search,deleteFilme}
