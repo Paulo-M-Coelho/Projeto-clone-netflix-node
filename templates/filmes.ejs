@@ -25,24 +25,79 @@
             <button class="btnLogout" type="submit">Logout</button>
         </form>
     </header>
+
+    <section class="section-banner">
+        <div class="banner">
+            <% if(filmeBanner) {%>
+             
+                    <div class="banner-div" id="<%=filmeBanner.id%>">
+                        <div>
+                            <h1><%=filmeBanner.name%></h1>
+                            <p><%=filmeBanner.description%></p>
+                            <a href="/filme/<%=filmeBanner.id%>"><img src="/assets/images/informação.png"> informações</a>
+                        </div>
+                        
+                        <img class="banner-img" src="<%=filmeBanner.urlImage%>">
+                        
+                    </div>
+                    </li>
+                    
+                    <% }%>
+        </div>
+    </section>
+
     <div class="filmes-container">
         <h1>Lançamentos</h1>
         <div class="container">
-            
-            <% if(filmes.length > 0) {%>
-                <% for(let filme of filmes) {%>
-                    <div class="card" id="<%=filme.id%>">
-                        <img class="card-img" src="<%=filme.urlImage%>">
-                        <h3><a href="/filme/<%=filme.id%>"><%=filme.name%></a></h3>
+            <div class="retroceder" onclick="avançar(-1,1)">
+                <img src="/assets/images/retroceder.png" alt="retroceder">
+            </div>
+            <div class="avançar" onclick="avançar(+1,1)">
+                <img  src="/assets/images/avançar.png" alt="avançar">
+            </div>
+            <ul class="container-interno1" >
+                <% if(filmes.length > 0) {%>
+                    <% for(let filme of filmes) {%>
+                        <li>
+                            <div class="card" id="<%=filme.id%>">
+                            <img class="card-img" src="<%=filme.urlImage%>">
+                            <h3><a href="/filme/<%=filme.id%>"><%=filme.name%></a></h3>
 
+                            
+                        </div>
+                        </li>
                         
+                        <% }}%>
+                    </ul>
+            
+        </div>
+
+        <div class="container">
+            <div class="retroceder" onclick="avançar(-1,1)">
+                <img src="/assets/images/retroceder.png" alt="retroceder">
+            </div>
+            <div class="avançar" onclick="avançar(+1,1)">
+                <img  src="/assets/images/avançar.png" alt="avançar">
+            </div>
+            <ul class="container-interno1" >
+                <% if(filmes.length > 0) {%>
+                    <% for(let filme of filmes) {%>
+                        <li>
+                            <div class="card" id="<%=filme.id%>">
+                            <img class="card-img" src="<%=filme.urlImage%>">
+                            <h3><a href="/filme/<%=filme.id%>"><%=filme.name%></a></h3>
+
+                            
+                        </div>
+                        </li>
                         
-                    </div>
-                    <% }}%>
+                        <% }}%>
+                    </ul>
+            
         </div>
     </div>
     
     
-    
+    <script src="/scripts/index.js"></script>
 </body>
 </html>

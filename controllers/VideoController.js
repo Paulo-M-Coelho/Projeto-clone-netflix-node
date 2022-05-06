@@ -3,10 +3,23 @@ const Video = require('../models/Video');
 
 // metodo para encontar e mostar todos os arquivos
 const allVideos = async (req,res)=>{
-    const bibliotecaVideos = await Video.find();
 
+    //Fução q gera um numero aleatorio de a cordo com a quantidade de filmes
+    //cadasrados e retorna apelas um, direcionado para uma variavel a ser colocada no banner
+    const filter =  ()=>{
+        let quantidade =  filmeBanner.length;
+        let numSortiado = Math.round(Math.random() * quantidade)
+        return numSortiado
+    }
+    const bibliotecaVideos = await Video.find();
+    const filmeBanner = await Video.find()
+   
+    
     res.render('filmes', {
-        filmes: bibliotecaVideos})
+        filmes: bibliotecaVideos,
+        filmeBanner : filmeBanner[filter()]
+    })
+        
 };
 
 // lista todos os filmes em uma tela como string
