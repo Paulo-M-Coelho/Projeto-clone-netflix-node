@@ -10,4 +10,4 @@ Projeto desenvolvido com Node e mongo db, com estrutura de cadastro de usuario e
 
 Desenvolvido por: Paulo Henrique de M. Coelho
 https://github.com/Paulo-M-Coelho
-https://www.linkedin.com/in/paulo-enrique-05b203236/
+https://www.linkedin.com/in/paulo-henrique-05b203236/
