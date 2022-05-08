@@ -13,11 +13,12 @@ const allVideos = async (req,res)=>{
     }
     const bibliotecaVideos = await Video.find();
     const filmeBanner = await Video.find()
-   
+   const filmesMarvel = await Video.find({category:"Marvel"})
     
     res.render('filmes', {
         filmes: bibliotecaVideos,
-        filmeBanner : filmeBanner[filter()]
+        filmeBanner : filmeBanner[filter()],
+        filmesMarvel: filmesMarvel,
     })
         
 };
@@ -57,9 +58,12 @@ const loadVideo = async (req,res)=>{
 const editVideo = async (req,res)=>{
     let video = {};
     video.name = req.body.name;
+    video.ano = req.body.ano;
+    video.nota = req.body.nota
     video.category = req.body.category;
     video.description = req.body.description;
     video.urlImage = req.body.urlImage;
+    video.urlBanner= req.body.urlBanner
     video.urlVideo = req.body.urlVideo;
 
     let id = req.params.id;

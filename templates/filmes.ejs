@@ -31,17 +31,27 @@
             <% if(filmeBanner) {%>
              
                     <div class="banner-div" id="<%=filmeBanner.id%>">
-                        <div>
+                        <div class="banner-div-2">
                             <h1><%=filmeBanner.name%></h1>
                             <p><%=filmeBanner.description%></p>
                             <a href="/filme/<%=filmeBanner.id%>"><img src="/assets/images/informação.png"> informações</a>
                         </div>
                         
-                        <img class="banner-img" src="<%=filmeBanner.urlImage%>">
+                        <div class="transparencia">
+                            <div class="transparencia-1"> 
+                            </div>
+                            <div class="transparencia-2"> 
+                            </div>
+                            <div class="transparencia-2"> 
+                            </div>
+                            <div class="transparencia-2"> 
+                            </div>
+                            <div class="transparencia-2"> 
+                            </div>
+                            <img class="banner-img" src="<%=filmeBanner.urlBanner%>">
+                        </div>  
                         
                     </div>
-                    </li>
-                    
                     <% }%>
         </div>
     </section>
@@ -71,7 +81,7 @@
                     </ul>
             
         </div>
-
+        <h1>Marvel</h1>
         <div class="container">
             <div class="retroceder" onclick="avançar(-1,1)">
                 <img src="/assets/images/retroceder.png" alt="retroceder">
@@ -80,8 +90,8 @@
                 <img  src="/assets/images/avançar.png" alt="avançar">
             </div>
             <ul class="container-interno1" >
-                <% if(filmes.length > 0) {%>
-                    <% for(let filme of filmes) {%>
+                <% if(filmesMarvel.length > 0) {%>
+                    <% for(let filme of filmesMarvel) {%>
                         <li>
                             <div class="card" id="<%=filme.id%>">
                             <img class="card-img" src="<%=filme.urlImage%>">

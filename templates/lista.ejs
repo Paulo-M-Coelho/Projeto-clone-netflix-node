@@ -16,6 +16,14 @@
                 <div>
                     <h2><%=filmes[i].name%></h2>
                     <h3><%=filmes[i].category%></h3>
+                    <div class="ano">
+                        <h3>Ano</h3>
+                        <%=filmes[i].ano%>
+                    </div>
+                    <div class="nota">
+                        <h3>Nota IMDB</h3>
+                        <%=filmes[i].nota%>
+                    </div>
                     <div class="desc">
                         <h3>Descrição</h3>
                         <%=filmes[i].description%>
@@ -23,6 +31,10 @@
                     <div class="urlImg">
                         <h3>URL da imagem</h3>
                         <%=filmes[i].urlImage%>
+                    </div>
+                    <div class="urlBanner">
+                        <h3>URL do Banner</h3>
+                        <%=filmes[i].urlBanner%>
                     </div>
                     <div class="urlVideo">
                         <h3>URL do video</h3>
