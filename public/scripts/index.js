@@ -1,17 +1,17 @@
 
 
 
-let containerInterno = document.querySelector('.container-interno')
+
 
 //let numDeItens = containerInterno.
 
 
-let numDeItens = 6
+
 
 function avançar(indice, lista){
-      numDeItens = numDeItens + indice
+      
 
-      let containerInterno = document.querySelector('.container-interno'+lista)
+      let containerInterno = document.querySelector('.lista'+lista)
       console.log(containerInterno);
 
       let mover = 150;

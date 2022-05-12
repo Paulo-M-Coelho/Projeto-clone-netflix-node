@@ -176,7 +176,7 @@ header div form button img{
     margin-left: 30px;
     margin-bottom: 30px;
 }
-.container-interno1{
+.container-interno{
     height: 350px;
     display: flex;
     
@@ -189,7 +189,7 @@ header div form button img{
     position: absolute;
     width: 40px;
     height: 300px;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(70, 70, 70, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,6 +197,7 @@ header div form button img{
     opacity: 0;
     cursor: pointer;
     transition: all ease .5s;
+    z-index:75;
 }
 .retroceser{
     left: 0;
@@ -220,6 +221,7 @@ header div form button img{
     width: 200px;
     height: 300px;
     background-color: rgb(3, 3, 3);
+    
     text-decoration: none;
     display: inline-block;
     color: white;
@@ -234,8 +236,8 @@ header div form button img{
 }
 .card  .card-img{
     width: 100%;
-    
-    object-fit: cover;
+    height: 100%;
+   
     border-radius: 10px;
 }
 .card h3{

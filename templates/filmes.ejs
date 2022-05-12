@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/index.css" >
-    <link rel="icon" href="/assets/images/pngwing.com.png" type="image/png">
-    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Poppins:wght@200&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,400;1,500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="icon" href="/assets/images/pngwing.com.png" type="image/png" />
+
     <title>Netflix</title>
 </head>
-<body>
 
+<body>
     <header>
-        <a href="/" class="app-logo"><img class="app-logo" src="/assets/images/pngwing.com.png" alt="logo"></a>
+        <a href="/" class="app-logo"><img class="app-logo" src="/assets/images/pngwing.com.png" alt="logo" /></a>
         <div class="search">
             <form action="/search">
-                <input type="text" name="search" placeholder="Buscar">
-                <button><img src="/assets/images/search-branco.png"></button>
+                <input type="text" name="search" placeholder="Buscar" />
+                <button><img src="/assets/images/search-branco.png" /></button>
             </form>
         </div>
-        
+
         <form action="/user/logout" method="post">
             <button class="btnLogout" type="submit">Logout</button>
         </form>
@@ -29,30 +32,28 @@
     <section class="section-banner">
         <div class="banner">
             <% if(filmeBanner) {%>
-             
-                    <div class="banner-div" id="<%=filmeBanner.id%>">
-                        <div class="banner-div-2">
-                            <h1><%=filmeBanner.name%></h1>
-                            <p><%=filmeBanner.description%></p>
-                            <a href="/filme/<%=filmeBanner.id%>"><img src="/assets/images/informação.png"> informações</a>
-                        </div>
-                        
-                        <div class="transparencia">
-                            <div class="transparencia-1"> 
-                            </div>
-                            <div class="transparencia-2"> 
-                            </div>
-                            <div class="transparencia-2"> 
-                            </div>
-                            <div class="transparencia-2"> 
-                            </div>
-                            <div class="transparencia-2"> 
-                            </div>
-                            <img class="banner-img" src="<%=filmeBanner.urlBanner%>">
-                        </div>  
-                        
+
+                <div class="banner-div" id="<%=filmeBanner.id%>">
+                    <div class="banner-div-2">
+                        <h1>
+                            <%=filmeBanner.name%>
+                        </h1>
+                        <p>
+                            <%=filmeBanner.description%>
+                        </p>
+                        <a href="/filme/<%=filmeBanner.id%>"><img src="/assets/images/informação.png" /> informações</a>
                     </div>
-                    <% }%>
+
+                    <div class="transparencia">
+                        <div class="transparencia-1"></div>
+                        <div class="transparencia-2"></div>
+                        <div class="transparencia-2"></div>
+                        <div class="transparencia-2"></div>
+                        <div class="transparencia-2"></div>
+                        <img class="banner-img" src="<%=filmeBanner.urlBanner%>" />
+                    </div>
+                </div>
+                <% }%>
         </div>
     </section>
 
@@ -60,54 +61,100 @@
         <h1>Lançamentos</h1>
         <div class="container">
             <div class="retroceder" onclick="avançar(-1,1)">
-                <img src="/assets/images/retroceder.png" alt="retroceder">
+                <img src="/assets/images/retroceder.png" alt="retroceder" />
             </div>
             <div class="avançar" onclick="avançar(+1,1)">
-                <img  src="/assets/images/avançar.png" alt="avançar">
+                <img src="/assets/images/avançar.png" alt="avançar" />
             </div>
-            <ul class="container-interno1" >
-                <% if(filmes.length > 0) {%>
-                    <% for(let filme of filmes) {%>
+            <ul class="container-interno lista1">
+                <% if(filmes.length> 0) {%> <% for(let filme of filmes) {%>
                         <li>
                             <div class="card" id="<%=filme.id%>">
-                            <img class="card-img" src="<%=filme.urlImage%>">
-                            <h3><a href="/filme/<%=filme.id%>"><%=filme.name%></a></h3>
-
-                            
-                        </div>
+                                
+                                <a href="/filme/<%=filme.id%>">
+                                    <img class="card-img" src="<%=filme.urlImage%>" /></a>
+                            </div>
                         </li>
-                        
+
                         <% }}%>
-                    </ul>
-            
+            </ul>
         </div>
+
         <h1>Marvel</h1>
         <div class="container">
-            <div class="retroceder" onclick="avançar(-1,1)">
-                <img src="/assets/images/retroceder.png" alt="retroceder">
+            <div class="retroceder" onclick="avançar(-1,2)">
+                <img src="/assets/images/retroceder.png" alt="retroceder" />
             </div>
-            <div class="avançar" onclick="avançar(+1,1)">
-                <img  src="/assets/images/avançar.png" alt="avançar">
+            <div class="avançar" onclick="avançar(+1,2)">
+                <img src="/assets/images/avançar.png" alt="avançar" />
             </div>
-            <ul class="container-interno1" >
-                <% if(filmesMarvel.length > 0) {%>
-                    <% for(let filme of filmesMarvel) {%>
+            <ul class="container-interno lista2">
+                <% if(filmesMarvel.length> 0) {%> <% for(let filme of filmesMarvel) {%>
                         <li>
                             <div class="card" id="<%=filme.id%>">
-                            <img class="card-img" src="<%=filme.urlImage%>">
-                            <h3><a href="/filme/<%=filme.id%>"><%=filme.name%></a></h3>
-
-                            
-                        </div>
+                                
+                                <a href="/filme/<%=filme.id%>">
+                                    <img class="card-img" src="<%=filme.urlImage%>" />
+                                </a>
+                            </div>
                         </li>
-                        
+
                         <% }}%>
-                    </ul>
-            
+            </ul>
         </div>
+
+        <h1>Animação</h1>
+        <div class="container">
+            <div class="retroceder" onclick="avançar(-1,3)">
+                <img src="/assets/images/retroceder.png" alt="retroceder" />
+            </div>
+            <div class="avançar" onclick="avançar(+1,3)">
+                <img src="/assets/images/avançar.png" alt="avançar" />
+            </div>
+            <ul class="container-interno lista3">
+                <% if(filmesAnimacao.length> 0) {%> <% for(let filme of filmesAnimacao) {%>
+                        <li>
+                            <div class="card" id="<%=filme.id%>">
+                                
+                                <a href="/filme/<%=filme.id%>">
+                                    <img class="card-img" src="<%=filme.urlImage%>" />
+                                </a>
+                            </div>
+                        </li>
+
+                        <% }}%>
+            </ul>
+        </div>
+
+        <h1>Comédia Romântica</h1>
+        <div class="container">
+            <div class="retroceder" onclick="avançar(-1,4)">
+                <img src="/assets/images/retroceder.png" alt="retroceder" />
+            </div>
+            <div class="avançar" onclick="avançar(+1,4)">
+                <img src="/assets/images/avançar.png" alt="avançar" />
+            </div>
+            <ul class="container-interno lista4">
+                <% if(filmesComediaRomantica.length> 0) {%> <% for(let filme of filmesComediaRomantica) {%>
+                        <li>
+                            <div class="card" id="<%=filme.id%>">
+                                <a href="/filme/<%=filme.id%>">
+                                    <img class="card-img" src="<%=filme.urlImage%>" />
+                                </a>
+                            </div>
+                        </li>
+
+                        <% }}%>
+            </ul>
+        </div>
+        
+
+
+
+
     </div>
-    
-    
+
     <script src="/scripts/index.js"></script>
 </body>
+
 </html>

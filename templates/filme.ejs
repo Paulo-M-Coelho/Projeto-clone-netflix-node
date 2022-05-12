@@ -20,7 +20,12 @@
             <img class="logoNetflix" src="/assets/images/netflix-logo.svg">
             <h1><%=filme.name%></h1>
             <div class="desc">
-                <h3>Sinopse</h3>
+                <div class="desc-1">
+                    <h3>Sinopse</h3>
+                    <h4><%= filme.ano%></h4>
+                    <h4 class="desc-h4-1"><%= filme.nota%>%</h4>
+                </div>
+                
                 <p><%= filme.description%></p>
             </div>
             <div class="play-1" onclick="displayPlay()">
@@ -30,7 +35,18 @@
             
         </div>
         
-        <img src="<%=filme.urlImage%>">
+        <div class="transparencia">
+            <div class="transparencia-1"></div>
+            <div class="transparencia-1"></div>
+            <div class="transparencia-1"></div>
+            <div class="transparencia-2"></div>
+            <div class="transparencia-2"></div>
+            <div class="transparencia-2"></div>
+            <div class="transparencia-2"></div>
+            
+            <img class="imgFilme" src="<%=filme.urlBanner%>">
+        </div>
+        
     </div>
     
     <div class="player display">

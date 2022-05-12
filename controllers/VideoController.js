@@ -12,13 +12,17 @@ const allVideos = async (req,res)=>{
         return numSortiado
     }
     const bibliotecaVideos = await Video.find();
-    const filmeBanner = await Video.find()
-   const filmesMarvel = await Video.find({category:"Marvel"})
+    const filmeBanner = await Video.find();
+    const filmesMarvel = await Video.find({category:"Marvel"});
+    const filmesAnimacao = await Video.find({category:"Animação"})
+    const filmesComediaRomantica = await Video.find({category:"Comédia romântica"})
     
     res.render('filmes', {
         filmes: bibliotecaVideos,
         filmeBanner : filmeBanner[filter()],
         filmesMarvel: filmesMarvel,
+        filmesAnimacao: filmesAnimacao,
+        filmesComediaRomantica: filmesComediaRomantica,
     })
         
 };
